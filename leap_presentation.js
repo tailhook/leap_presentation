@@ -10,10 +10,11 @@ Leap.loop({enableGestures: true}, function(frame) {
                 continue;
             if(gest.distance < 50)
                 continue;
-            if(gest.direction.x < -0.6) {
+            if(Math.abs(gest.direction.y) > 0.3)
+                continue;
+            if(gest.direction.x > 0) {
                 stack.scroll_on_delta(-1);
-            }
-            if(gest.direction.x > +0.6) {
+            } else {
                 stack.scroll_on_delta(1);
             }
             last_swipe = +new Date();

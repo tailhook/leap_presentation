@@ -111,6 +111,9 @@ var stack = (function() {
       case 32: // space
       delta = d3.event.shiftKey ? -1 : 1;
       break;
+      case 70: // f
+        document.documentElement.webkitRequestFullScreen(document.documentElement);
+      return
       default: return;
     }
     stack.scroll_on_delta(delta);
