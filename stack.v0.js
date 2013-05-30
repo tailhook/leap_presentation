@@ -50,6 +50,11 @@ var stack = (function() {
     return stack;
   };
 
+  stack.smooth_scroll = function smooth_scroll(delta) {
+    body.scrollTop += delta*size;
+    scroll();
+  }
+
   // Don't do anything fancy for iOS.
   if (section.style("display") == "block") return;
 
@@ -108,10 +113,13 @@ var stack = (function() {
       break;
       default: return;
     }
+    stack.scroll_on_delta(delta);
+    d3.event.preventDefault();
+  }
+  stack.scroll_on_delta = function scroll_on_delta(delta) {
     if (timeout) timeout = clearTimeout(timeout);
     if (yTarget == null) yTarget = (delta > 0 ? Math.floor : Math.ceil)(yActual == yFloor ? yFloor : yActual + (.5 - yOffset / size / 2));
     stack.position(yTarget = Math.max(0, Math.min(n - 1, yTarget + delta)));
-    d3.event.preventDefault();
   }
 
   function scroll() {
