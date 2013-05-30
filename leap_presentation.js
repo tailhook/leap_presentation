@@ -48,5 +48,10 @@ Leap.loop({enableGestures: true}, function(frame) {
             }
             last_circle = +new Date();
         }
+        if(gest.type == 'tap') {
+            document.body.classList.add('flick');
+        }
     }
 })
+document.body.addEventListener('webkitAnimationEnd',
+    function() { document.body.classList.remove('flick'); });

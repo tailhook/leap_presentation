@@ -22,6 +22,20 @@ li {
 body {
     background-color: black;
 }
+@-webkit-keyframes flick {
+    from {
+        padding-top: 0%;
+    }
+    50% {
+        padding-top: 10%;
+    }
+    to {
+        padding-top: 0%;
+    }
+}
+body.flick {
+    -webkit-animation: flick 0.5s linear;
+}
 
 </style>
 <body class="overview">
