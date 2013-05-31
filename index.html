@@ -75,13 +75,7 @@ body.flick {
     <h1 style="text-align: center">The Myth</h1>
 </section>
 
-<section class="big">
-    <h1>Binocular Vision</h1>
-</section>
-
-<section class="big">
-    <h1>Field of View</h1>
-</section>
+<!-- FEATURES -->
 
 <section class="big">
     <h1>3D Space</h1>
@@ -95,8 +89,180 @@ body.flick {
     <h1>Gestures</h1>
 </section>
 
+<!-- TECHNOLOGY -->
+
+<section class="big">
+    <h1>Binocular Vision</h1>
+</section>
+
+<section class="big">
+    <h1>IR Sensor</h1>
+</section>
+
+<section class="big">
+    <h1>Field of View</h1>
+</section>
+
 <section class="big">
     <h1>CPU</h1>
+</section>
+
+<section class="big">
+    <h1>120-200 FPS</h1>
+</section>
+
+<!-- MARKET -->
+
+<section class="big">
+    <h1>Market</h1>
+</section>
+
+<section class="big">
+    <h1>Surgeons</h1>
+</section>
+
+<section class="big">
+    <h1>Artists</h1>
+</section>
+
+<section class="big">
+    <h1>Musicians</h1>
+</section>
+
+<section class="big">
+    <h1>Geeks</h1>
+</section>
+
+<section class="big">
+    <h1>50/50</h1>
+    <h1>70/30</h1>
+</section>
+
+<section class="big">
+    <h1>600 000</h1>
+</section>
+
+<!-- DEMO -->
+
+<section class="big">
+    <h1>Block54</h1>
+</section>
+
+<section class="big">
+    <h1>Tower</h1>
+</section>
+
+<!-- PYTHON -->
+
+<section class="big">
+    <h1>SWIG Bindings</h1>
+</section>
+
+<section class="big">
+<ul>
+    <li>Controller.frame()
+    <li>Listener.on_frame()
+</ul>
+</section>
+
+<section class="big">
+    <h1>Panda3d</h1>
+</section>
+
+<section>
+    <code>base.disableMouse()</code>
+</section>
+
+<section style="padding-top: 0; font-size: 180%">
+    <pre><code>__builtin__.base = self
+__builtin__.render2d = self.render2d
+__builtin__.aspect2d = self.aspect2d
+__builtin__.pixel2d = self.pixel2d
+__builtin__.render = self.render
+__builtin__.hidden = self.hidden
+__builtin__.camera = self.camera
+__builtin__.loader = self.loader
+__builtin__.taskMgr = self.taskMgr
+__builtin__.jobMgr = self.jobMgr
+__builtin__.eventMgr = self.eventMgr
+__builtin__.messenger = self.messenger
+__builtin__.bboard = self.bboard
+__builtin__.run = self.run
+__builtin__.ostream = Notify.out()
+__builtin__.directNotify = directNotify
+__builtin__.giveNotify = giveNotify
+__builtin__.globalClock = globalClock
+__builtin__.vfs = vfs
+__builtin__.cpMgr = ConfigPageManager.getGlobalPtr()
+__builtin__.cvMgr = ConfigVariableManager.getGlobalPtr()
+__builtin__.pandaSystem = PandaSystem.getGlobalPtr()
+__builtin__.wantUberdog = base.config.GetBool('want-uberdog', 1)
+if __debug__:
+    __builtin__.deltaProfiler = DeltaProfiler.DeltaProfiler("ShowBase")
+__builtin__.onScreenDebug = OnScreenDebug.OnScreenDebug()
+
+if self.wantRender2dp:
+    __builtin__.render2dp = self.render2dp
+    __builtin__.aspect2dp = self.aspect2dp
+    __builtin__.pixel2dp = self.pixel2dp
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
+__builtin__.myApp = self
+__builtin__.myObjectManager = ObjectManager()
+__builtin__.myGui = MyGui()
+__builtin__.myCamera = MyCamera()
+__builtin__.myInputHandler = InputHandler()
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
+m = loader.loadModel("mymodel.egg")
+m.reparentTo(render)
+    </code></pre>
+</section>
+
+<section style="font-size: 250%;">
+    <pre><code>self.buttonThrowers = []
+for i in range(win.getNumInputDevices()):
+    name = win.getInputDeviceName(i)
+    mk = base.dataRoot.attachNewNode(MouseAndKeyboard(win, i, name))
+    mw = mk.attachNewNode(MouseWatcher(name))
+    bt = mw.attachNewNode(ButtonThrower(name))
+    if i != 0: bt.node().setPrefix('mousedev'+str(i)+'-')
+    mods = ModifierButtons()
+    bt.node().setModifierButtons(mods)
+    self.buttonThrowers.append(bt)
+self.mouseWatcher = self.buttonThrowers[0].getParent()
+self.mouseWatcherNode = self.mouseWatcher.node()
+    </code></pre>
+</section>
+
+<section class="big">
+    <h1>python3</h1>
+</section>
+
+<section class="big">
+    <h1>pyglet (hg)</h1>
+</section>
+
+<section class="big">
+    <h1>ctypes</h1>
+</section>
+
+<section>
+    <pre><code>ctypes.cast((ctypes.u_uint*2)(),
+    ctypes.c_void_p)</code></pre>
+</section>
+
+<section class="big">
+    <ul>
+        <li>Vector
+        <li>Matrix
+    </ul>
 </section>
 
 <script src="d3.v3.min.js"></script>
