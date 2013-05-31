@@ -12,6 +12,8 @@ Leap.loop({enableGestures: true}, function(frame) {
                 continue;
             if(Math.abs(gest.direction.y) > 0.3)
                 continue;
+            if(Math.abs(gest.position.z) > 50)
+                continue;
             if(gest.direction.x > 0) {
                 stack.scroll_on_delta(-1);
             } else {
@@ -48,7 +50,7 @@ Leap.loop({enableGestures: true}, function(frame) {
             }
             last_circle = +new Date();
         }
-        if(gest.type == 'tap') {
+        if(gest.type == 'keyTap') {
             document.body.classList.add('flick');
         }
     }

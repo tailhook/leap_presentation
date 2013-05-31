@@ -34,7 +34,7 @@ body {
     }
 }
 body.flick {
-    -webkit-animation: flick 0.5s linear;
+    -webkit-animation: flick 0.25s linear;
 }
 
 </style>
@@ -134,8 +134,10 @@ body.flick {
 </section>
 
 <section class="big">
-    <h1>50/50</h1>
-    <h1>70/30</h1>
+<ul>
+    <li>50/50
+    <li>70/30
+</ul>
 </section>
 
 <section class="big">
@@ -152,6 +154,10 @@ body.flick {
     <h1>Tower</h1>
 </section>
 
+<section class="big">
+    <h1>Theremin</h1>
+</section>
+
 <!-- PYTHON -->
 
 <section class="big">
@@ -163,6 +169,10 @@ body.flick {
     <li>Controller.frame()
     <li>Listener.on_frame()
 </ul>
+</section>
+
+<section class="big">
+    <h1>7 Threads</h1>
 </section>
 
 <section class="big">
@@ -201,6 +211,50 @@ if __debug__:
     __builtin__.deltaProfiler = DeltaProfiler.DeltaProfiler("ShowBase")
 __builtin__.onScreenDebug = OnScreenDebug.OnScreenDebug()
 
+if self.wantRender2dp:
+    __builtin__.render2dp = self.render2dp
+    __builtin__.aspect2dp = self.aspect2dp
+    __builtin__.pixel2dp = self.pixel2dp
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
+__builtin__.hidden = self.hidden
+__builtin__.camera = self.camera
+__builtin__.loader = self.loader
+__builtin__.taskMgr = self.taskMgr
+__builtin__.jobMgr = self.jobMgr
+__builtin__.messenger = self.messenger
+__builtin__.bboard = self.bboard
+__builtin__.run = self.run
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
+__builtin__.cpMgr = ConfigPageManager.getGlobalPtr()
+__builtin__.cvMgr = ConfigVariableManager.getGlobalPtr()
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
+__builtin__.wantUberdog = base.config.GetBool('want-uberdog', 1)
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
+__builtin__.render = self.render
+__builtin__.render2d = self.render2d
+__builtin__.aspect2d = self.aspect2d
+__builtin__.pixel2d = self.pixel2d
+    </code></pre>
+</section>
+
+<section>
+    <pre><code>
 if self.wantRender2dp:
     __builtin__.render2dp = self.render2dp
     __builtin__.aspect2dp = self.aspect2dp
@@ -263,6 +317,14 @@ self.mouseWatcherNode = self.mouseWatcher.node()
         <li>Vector
         <li>Matrix
     </ul>
+</section>
+
+<section class="big">
+    <h1>gc</h1>
+</section>
+
+<section class="big">
+    <h1>...</h1>
 </section>
 
 <script src="d3.v3.min.js"></script>
