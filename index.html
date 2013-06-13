@@ -36,6 +36,10 @@ body {
 body.flick {
     -webkit-animation: flick 0.25s linear;
 }
+section.white {
+    background: white;
+    color: black;
+}
 
 </style>
 <body class="overview">
@@ -50,8 +54,9 @@ body.flick {
 </ul>
 </section>
 
-<section>
+<section class="white">
 <ul>
+<li><img src="logo.png">
 <li>Leap Motion
 <li>Python &amp; Leap &amp; 3D
 </ul>
@@ -137,10 +142,6 @@ body.flick {
 
 <section class="big">
     <h1>Block54</h1>
-</section>
-
-<section class="big">
-    <h1>Tower</h1>
 </section>
 
 <section class="big">
@@ -251,24 +252,6 @@ __builtin__.wantUberdog = base.config.GetBool('want-uberdog', 1)
 
 <section>
     <pre><code>
-__builtin__.render = self.render
-__builtin__.render2d = self.render2d
-__builtin__.aspect2d = self.aspect2d
-__builtin__.pixel2d = self.pixel2d
-    </code></pre>
-</section>
-
-<section>
-    <pre><code>
-if self.wantRender2dp:
-    __builtin__.render2dp = self.render2dp
-    __builtin__.aspect2dp = self.aspect2dp
-    __builtin__.pixel2dp = self.pixel2dp
-    </code></pre>
-</section>
-
-<section>
-    <pre><code>
 __builtin__.myApp = self
 __builtin__.myObjectManager = ObjectManager()
 __builtin__.myGui = MyGui()
@@ -276,6 +259,16 @@ __builtin__.myCamera = MyCamera()
 __builtin__.myInputHandler = InputHandler()
     </code></pre>
 </section>
+
+<section>
+    <pre><code>
+__builtin__.render = self.render
+__builtin__.render2d = self.render2d
+__builtin__.aspect2d = self.aspect2d
+__builtin__.pixel2d = self.pixel2d
+    </code></pre>
+</section>
+
 
 <section>
     <pre><code>
@@ -324,6 +317,54 @@ self.mouseWatcherNode = self.mouseWatcher.node()
     <h1>vertexlists</h1>
 </section>
 
+<section>
+    <pre><code>
+theTorus = glGenLists (1);
+glNewList(theTorus, GL_COMPILE);
+glVertex3f(...);
+glNormal3f(...);
+...
+glEndList();
+    </pre></code>
+</section>
+
+<section>
+    <pre><code>
+glColor3f(1.0, 1.0, 1.0);
+glBegin(GL_QUADS);
+glCallList(theTorus);
+glEnd(GL_QUADS);
+...
+glBegin(GL_QUADS);
+glColor3f(2.0, 2.0, 2.0);
+glCallList(theTorus);
+glEnd(GL_QUADS);
+    </pre></code>
+</section>
+
+<section>
+    <pre><code>
+        b = Batch()
+        theTorus = b.add(8, GL_QUADS, ColorGroup(1.0, 1.0, 1.0),
+                 ('v3f', (v for v in ...)),
+                 ('n3f', (n for n in ...)))
+    </pre></code>
+</section>
+
+<section>
+    <pre><code>
+        b.draw()
+    </pre></code>
+</section>
+
+<section>
+    <pre><code>
+        theTorus.vertices[:] = (v for v in ...)
+        theTorus.normals[:] = (v for v in ...)
+        theTorus.delete()
+    </pre></code>
+</section>
+
 <section class="big">
     <h1>ctypes</h1>
 </section>
@@ -332,16 +373,18 @@ self.mouseWatcherNode = self.mouseWatcher.node()
     <h1>gc</h1>
 </section>
 
+<section class="big">
+    <h1>GC</h1>
+    <ul>
+        <li>unpredictable</li>
+        <li>FPS drop</li>
+        <li>optional (not with ctypes)</li>
+    </ul>
+</section>
+
 <section>
     <pre><code>ctypes.cast((ctypes.u_uint*2)(),
     ctypes.c_void_p)</code></pre>
-</section>
-
-<section class="big">
-    <ul>
-        <li>Vector
-        <li>Matrix
-    </ul>
 </section>
 
 <section class="big">
